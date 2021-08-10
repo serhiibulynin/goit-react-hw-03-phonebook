@@ -6,12 +6,12 @@ import styles from "./ContactList.module.css";
 
 const ContactList = ({ contacts, onRemoveContact }) => (
   <>
-    {contacts.length && <h2>Contacts</h2>}
+    {contacts.length > 0 && <h2>Contacts</h2>}
     <ul className={styles.ContactList}>
-      {contacts.map((contacts) => (
+      {contacts.map((contact) => (
         <ContactListItem
-          key={contacts.id}
-          contacts={contacts}
+          key={contact.id}
+          contact={contact}
           onRemoveContact={onRemoveContact}
         />
       ))}
